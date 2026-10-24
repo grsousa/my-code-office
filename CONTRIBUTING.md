@@ -28,8 +28,3 @@ powershell -ExecutionPolicy Bypass -File scripts\instalar.ps1 [-ComHooks]
 
 `scripts/configurar-hooks.js instalar | remover | status` edita `~/.claude/settings.json`, guarda `settings.json.antes-my-code-office-<data>` a cada gravação e é idempotente.
 
-## Antes de publicar no Marketplace
-
-- Campo `repository` no `package.json`: sem ele, o `vsce` não aceita imagens com caminho relativo no README.
-- Ícone em PNG 128x128 (o Marketplace não aceita SVG em `icon`).
-- `LICENSE`.
