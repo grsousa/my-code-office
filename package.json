@@ -1,0 +1,118 @@
+{
+  "name": "my-code-office",
+  "displayName": "My Code Office",
+  "description": "%description%",
+  "version": "0.8.13",
+  "publisher": "gleise",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "myCodeOffice",
+          "title": "%view.title%",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "myCodeOffice": [
+        {
+          "type": "webview",
+          "id": "myCodeOffice.cena",
+          "name": "%view.title%",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "myCodeOffice.atualizar",
+        "title": "%command.refresh%",
+        "category": "My Code Office"
+      },
+      {
+        "command": "myCodeOffice.abrir",
+        "title": "%command.open%",
+        "category": "My Code Office"
+      },
+      {
+        "command": "myCodeOffice.configurar",
+        "title": "%command.setup%",
+        "category": "My Code Office"
+      }
+    ],
+    "configuration": {
+      "title": "My Code Office",
+      "properties": {
+        "myCodeOffice.idioma": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "pt-BR",
+            "en"
+          ],
+          "default": "auto",
+          "enumDescriptions": [
+            "%config.language.auto%",
+            "Português (Brasil)",
+            "English"
+          ],
+          "description": "%config.language%"
+        },
+        "myCodeOffice.arranjo": {
+          "type": "string",
+          "enum": [
+            "fileiras",
+            "ilhas"
+          ],
+          "default": "fileiras",
+          "enumDescriptions": [
+            "%config.layout.rows%",
+            "%config.layout.pods%"
+          ],
+          "description": "%config.layout%"
+        },
+        "myCodeOffice.horasVisiveis": {
+          "type": "number",
+          "default": 12,
+          "minimum": 1,
+          "description": "%config.visibleHours%"
+        },
+        "myCodeOffice.minutosCochilo": {
+          "type": "number",
+          "default": 60,
+          "minimum": 5,
+          "description": "%config.napMinutes%"
+        },
+        "myCodeOffice.tokensCansado": {
+          "type": "number",
+          "default": 400000,
+          "minimum": 10000,
+          "description": "%config.tiredTokens%"
+        },
+        "myCodeOffice.arquivoAmbientes": {
+          "type": "string",
+          "default": "~/.claude/branches/estado.md",
+          "description": "%config.environmentsFile%"
+        },
+        "myCodeOffice.arquivoAvisos": {
+          "type": "string",
+          "default": "~/.claude/my-code-office/avisos.md",
+          "description": "%config.noticesFile%"
+        }
+      }
+    }
+  }
+}

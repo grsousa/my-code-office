@@ -1,0 +1,17 @@
+{
+  "description": "Your Claude Code conversations as a cozy pixel-art office: who is waiting for you, who finished, who is in a meeting with subagents, branches and test environments.",
+  "view.title": "Office",
+  "command.refresh": "Refresh now",
+  "command.open": "Open panel",
+  "command.setup": "Set up (interview in Claude Code)",
+  "config.language": "Language of the panel and of the generated skills.",
+  "config.language.auto": "Follow the VS Code language",
+  "config.layout": "How the desks are arranged in the office.",
+  "config.layout.rows": "Two rows; neighboring desks from the same repo share a rug with the repo name.",
+  "config.layout.pods": "Pods of 4 desks per repo, each on its own rug.",
+  "config.visibleHours": "Conversations idle for longer than this many hours leave the office.",
+  "config.napMinutes": "After how many idle minutes a conversation is shown napping.",
+  "config.tiredTokens": "From how many context tokens the worker looks tired (time to start a new conversation).",
+  "config.environmentsFile": "File with the test environments table (kept by the /branches skill).",
+  "config.noticesFile": "File with the notice board items (one per line: \"- [ ] text\")."
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Suas conversas do Claude Code como um escritório aconchegante em pixel art: quem espera você, quem terminou, quem está em reunião com subagentes, branches e ambientes de teste.",
+  "view.title": "Escritório",
+  "command.refresh": "Atualizar agora",
+  "command.open": "Abrir painel",
+  "command.setup": "Configurar (entrevista no Claude Code)",
+  "config.language": "Idioma do painel e das skills geradas.",
+  "config.language.auto": "Seguir o idioma do VS Code",
+  "config.layout": "Como as mesas ficam arrumadas no escritório.",
+  "config.layout.rows": "Duas fileiras; mesas vizinhas do mesmo repo dividem um tapete com o nome do repo.",
+  "config.layout.pods": "Baias de 4 mesas por repo, cada uma no seu tapete.",
+  "config.visibleHours": "Conversas sem atividade há mais horas que isso saem do escritório.",
+  "config.napMinutes": "Depois de quantos minutos sem atividade a conversa aparece cochilando.",
+  "config.tiredTokens": "A partir de quantos tokens de contexto o trabalhador aparece cansado (hora de abrir conversa nova).",
+  "config.environmentsFile": "Arquivo com a tabela de ambientes de teste (mantido pela skill /branches).",
+  "config.noticesFile": "Arquivo com os avisos do quadro (um por linha: \"- [ ] texto\")."
+}
