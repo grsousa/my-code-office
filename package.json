@@ -5,6 +5,14 @@
   "version": "0.8.13",
   "publisher": "gleise",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grsousa/my-code-office.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grsousa/my-code-office/issues"
+  },
+  "homepage": "https://github.com/grsousa/my-code-office#readme",
   "private": true,
   "engines": {
     "vscode": "^1.90.0"
