@@ -7,7 +7,7 @@ const { instalarSetup, migrar, copiarFerramentas } = require("./configurador/apl
 const { traduzir, resolverIdioma } = require("./media/textos");
 
 function idioma() {
-  const preferido = escolher(vscode.workspace.getConfiguration("myCodeOffice"), "idioma", (lerConfigDaEntrevista() || {}).idioma, "auto");
+  const preferido = escolher(vscode.workspace.getConfiguration("myCodeOffice"), "language", (lerConfigDaEntrevista() || {}).idioma, "auto");
   return resolverIdioma(preferido, vscode.env.language);
 }
 const t = (chave, parametros) => traduzir(idioma(), chave, parametros);

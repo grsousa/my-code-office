@@ -2,9 +2,9 @@
 
 **Your Claude Code conversations as a pixel-art office.** Each desk is a conversation. At a glance you see who is waiting for you, who is done, who is in a meeting with subagents, and which repo and branch each one is touching.
 
-> 🇧🇷 O painel e a configuração também falam português: seguem o idioma do VS Code, ou escolha em `myCodeOffice.idioma`. Este README em português: `README.pt-BR.md` no repositório.
+> 🇧🇷 O painel e a configuração também falam português: seguem o idioma do VS Code, ou escolha em `myCodeOffice.language`. Este README em português: `README.pt-BR.md` no repositório.
 
-<!-- Main screenshot: added once the public repository exists (vsce needs the "repository" field for images). -->
+![The office: a conversation waiting for approval, one with a result, a meeting with subagents, test environment rooms, the notice board and the mailbox](docs/screenshot.png)
 
 ## Who it's for
 
@@ -53,13 +53,13 @@ In the interview, the question "show when a conversation is waiting for your app
 
 | Setting | Default | What for |
 |---|---|---|
-| `myCodeOffice.idioma` | `auto` | `pt-BR`, `en` or the VS Code language |
-| `myCodeOffice.arranjo` | `fileiras` | `fileiras` (rows, one rug per repo) or `ilhas` (pods of 4) |
-| `myCodeOffice.horasVisiveis` | `12` | Conversations idle for longer leave the office |
-| `myCodeOffice.minutosCochilo` | `60` | Idle minutes before napping |
-| `myCodeOffice.tokensCansado` | `400000` | Context size from which the worker looks tired |
-| `myCodeOffice.arquivoAmbientes` | `~/.claude/branches/estado.md` | Test environments table (kept by `/branches`) |
-| `myCodeOffice.arquivoAvisos` | `~/.claude/my-code-office/avisos.md` | Notice board items, one per line: `- [ ] text` |
+| `myCodeOffice.language` | `auto` | `pt-BR`, `en` or the VS Code language |
+| `myCodeOffice.layout` | `rows` | `rows` (one rug per repo) or `pods` (pods of 4) |
+| `myCodeOffice.visibleHours` | `12` | Conversations idle for longer leave the office |
+| `myCodeOffice.napMinutes` | `60` | Idle minutes before napping |
+| `myCodeOffice.tiredTokens` | `400000` | Context size from which the worker looks tired |
+| `myCodeOffice.environmentsFile` | `~/.claude/branches/estado.md` | Test environments table (kept by `/branches`) |
+| `myCodeOffice.noticesFile` | `~/.claude/my-code-office/avisos.md` | Notice board items, one per line: `- [ ] text` |
 
 Commands (Ctrl+Shift+P): **My Code Office: Open panel**, **Refresh now** and **Set up**.
 
@@ -71,10 +71,15 @@ Everything stays on your machine. The panel reads Claude Code's history in `~/.c
 
 - VS Code 1.90 or newer, with Claude Code installed.
 - Node.js, only for live status.
-- Tested on Windows.
+- **Preview:** tested on Windows only. If you use macOS or Linux, reports are very welcome in the [issues](https://github.com/grsousa/my-code-office/issues).
+- It reads files that Claude Code keeps in `~/.claude`. If a Claude Code update changes their format, some panel details may stop working until a new version.
 
 ## Undo
 
 The interview backs up everything it changes in `~/.claude/my-code-office/backups/` and, at the end, shows the command to restore it. To leave for good: run `/my-code-office` and answer "no" to live status (this removes the Claude Code notifications), then uninstall the extension from the Extensions view. The `/branches` and `/conversation` skills keep working on their own; delete their folders in `~/.claude/skills/` if you no longer want them.
 
 For development, see `CONTRIBUTING.md` in the repository.
+
+---
+
+My Code Office is an independent project. It is not affiliated with, endorsed by or sponsored by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic.

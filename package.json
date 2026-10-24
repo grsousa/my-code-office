@@ -2,7 +2,7 @@
   "name": "my-code-office",
   "displayName": "My Code Office",
   "description": "%description%",
-  "version": "0.8.13",
+  "version": "0.9.0",
   "publisher": "gleise",
   "license": "MIT",
   "repository": {
@@ -13,11 +13,11 @@
     "url": "https://github.com/grsousa/my-code-office/issues"
   },
   "homepage": "https://github.com/grsousa/my-code-office#readme",
-  "private": true,
   "engines": {
     "vscode": "^1.90.0"
   },
   "categories": [
+    "Visualization",
     "Other"
   ],
   "main": "./extension.js",
@@ -64,7 +64,7 @@
     "configuration": {
       "title": "My Code Office",
       "properties": {
-        "myCodeOffice.idioma": {
+        "myCodeOffice.language": {
           "type": "string",
           "enum": [
             "auto",
@@ -79,48 +79,60 @@
           ],
           "description": "%config.language%"
         },
-        "myCodeOffice.arranjo": {
+        "myCodeOffice.layout": {
           "type": "string",
           "enum": [
-            "fileiras",
-            "ilhas"
+            "rows",
+            "pods"
           ],
-          "default": "fileiras",
+          "default": "rows",
           "enumDescriptions": [
             "%config.layout.rows%",
             "%config.layout.pods%"
           ],
           "description": "%config.layout%"
         },
-        "myCodeOffice.horasVisiveis": {
+        "myCodeOffice.visibleHours": {
           "type": "number",
           "default": 12,
           "minimum": 1,
           "description": "%config.visibleHours%"
         },
-        "myCodeOffice.minutosCochilo": {
+        "myCodeOffice.napMinutes": {
           "type": "number",
           "default": 60,
           "minimum": 5,
           "description": "%config.napMinutes%"
         },
-        "myCodeOffice.tokensCansado": {
+        "myCodeOffice.tiredTokens": {
           "type": "number",
           "default": 400000,
           "minimum": 10000,
           "description": "%config.tiredTokens%"
         },
-        "myCodeOffice.arquivoAmbientes": {
+        "myCodeOffice.environmentsFile": {
           "type": "string",
           "default": "~/.claude/branches/estado.md",
           "description": "%config.environmentsFile%"
         },
-        "myCodeOffice.arquivoAvisos": {
+        "myCodeOffice.noticesFile": {
           "type": "string",
           "default": "~/.claude/my-code-office/avisos.md",
           "description": "%config.noticesFile%"
         }
       }
     }
-  }
+  },
+  "preview": true,
+  "icon": "media/icon.png",
+  "keywords": [
+    "claude",
+    "claude code",
+    "ai",
+    "agents",
+    "pixel art",
+    "git",
+    "branches",
+    "dashboard"
+  ]
 }

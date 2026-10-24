@@ -33,14 +33,15 @@ class VisaoEscritorio {
 
   configuracao() {
     const c = vscode.workspace.getConfiguration("myCodeOffice"), entrevista = lerConfigDaEntrevista() || {};
-    const idioma = resolverIdioma(escolher(c, "idioma", entrevista.idioma, "auto"), vscode.env.language);
+    const idioma = resolverIdioma(escolher(c, "language", entrevista.idioma, "auto"), vscode.env.language);
+    const arranjo = escolher(c, "layout", entrevista.arranjo, "rows");
     return {
       idioma,
-      arranjo: escolher(c, "arranjo", entrevista.arranjo, "fileiras"),
+      arranjo: { rows: "fileiras", pods: "ilhas" }[arranjo] || arranjo,
       ambientes: entrevista.ambientes || ["dev", "tst", "hmg"], repos: entrevista.repos || [],
       tituloFila: entrevista.tituloFila || traduzir(idioma, "fila.titulo"),
-      horasVisiveis: c.get("horasVisiveis", 12), minutosCochilo: c.get("minutosCochilo", 60), tokensCansado: c.get("tokensCansado", 400000),
-      arquivoAmbientes: c.get("arquivoAmbientes", caminhos.ESTADO_BRANCHES), arquivoAvisos: c.get("arquivoAvisos", caminhos.AVISOS),
+      horasVisiveis: escolher(c, "visibleHours", null, 12), minutosCochilo: escolher(c, "napMinutes", null, 60), tokensCansado: escolher(c, "tiredTokens", null, 400000),
+      arquivoAmbientes: escolher(c, "environmentsFile", null, caminhos.ESTADO_BRANCHES), arquivoAvisos: escolher(c, "noticesFile", null, caminhos.AVISOS),
     };
   }
 

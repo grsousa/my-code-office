@@ -4,7 +4,7 @@
 
 > Versão em inglês (principal, a do Marketplace): `README.md`.
 
-<!-- Captura principal: entra quando o repositório público existir (o vsce exige o campo "repository" para imagens). -->
+![O escritório: uma conversa esperando aprovação, uma com resultado, uma reunião com subagentes, as salas dos ambientes de teste, o quadro de avisos e o correio](docs/screenshot.png)
 
 ## Para quem é
 
@@ -53,13 +53,13 @@ Na entrevista, a pergunta "mostrar quando uma conversa está esperando sua aprov
 
 | Configuração | Padrão | Para quê |
 |---|---|---|
-| `myCodeOffice.idioma` | `auto` | `pt-BR`, `en` ou o idioma do VS Code |
-| `myCodeOffice.arranjo` | `fileiras` | `fileiras` com tapete por repo, ou `ilhas` (baias de 4) |
-| `myCodeOffice.horasVisiveis` | `12` | Conversas paradas há mais tempo saem do escritório |
-| `myCodeOffice.minutosCochilo` | `60` | Minutos sem atividade até cochilar |
-| `myCodeOffice.tokensCansado` | `400000` | Tamanho do contexto a partir do qual aparece cansado |
-| `myCodeOffice.arquivoAmbientes` | `~/.claude/branches/estado.md` | Tabela de ambientes (mantida pela `/branches`) |
-| `myCodeOffice.arquivoAvisos` | `~/.claude/my-code-office/avisos.md` | Avisos do quadro, um por linha: `- [ ] texto` |
+| `myCodeOffice.language` | `auto` | `pt-BR`, `en` ou o idioma do VS Code |
+| `myCodeOffice.layout` | `rows` | `rows` (fileiras, tapete por repo) ou `pods` (baias de 4) |
+| `myCodeOffice.visibleHours` | `12` | Conversas paradas há mais tempo saem do escritório |
+| `myCodeOffice.napMinutes` | `60` | Minutos sem atividade até cochilar |
+| `myCodeOffice.tiredTokens` | `400000` | Tamanho do contexto a partir do qual aparece cansado |
+| `myCodeOffice.environmentsFile` | `~/.claude/branches/estado.md` | Tabela de ambientes (mantida pela `/branches`) |
+| `myCodeOffice.noticesFile` | `~/.claude/my-code-office/avisos.md` | Avisos do quadro, um por linha: `- [ ] texto` |
 
 Comandos (Ctrl+Shift+P): **My Code Office: Abrir painel**, **Atualizar agora** e **Configurar**.
 
@@ -71,10 +71,15 @@ Tudo fica na sua máquina. O painel lê os históricos do Claude Code em `~/.cla
 
 - VS Code 1.90 ou mais novo e o Claude Code instalado.
 - Node.js, só para o estado ao vivo.
-- Testado no Windows.
+- **Preview:** testado só no Windows. Se você usa macOS ou Linux, conte como foi nas [issues](https://github.com/grsousa/my-code-office/issues).
+- Ele lê arquivos que o Claude Code guarda em `~/.claude`. Se uma atualização do Claude Code mudar esse formato, alguns detalhes do painel podem parar de funcionar até uma versão nova.
 
 ## Desfazer
 
 A entrevista guarda uma cópia de segurança de tudo o que altera em `~/.claude/my-code-office/backups/` e, no fim, mostra o comando para restaurar. Para sair de vez: rode `/my-code-office` e responda "não" ao estado ao vivo (isso tira os avisos do Claude Code), depois desinstale a extensão pela aba Extensões. As skills `/branches` e `/conversa` continuam funcionando sozinhas; apague as pastas delas em `~/.claude/skills/` se não quiser mais.
 
 Para desenvolver: veja o `CONTRIBUTING.md` do repositório.
+
+---
+
+O My Code Office é um projeto independente, sem vínculo, endosso ou patrocínio da Anthropic. "Claude" e "Claude Code" são marcas da Anthropic.

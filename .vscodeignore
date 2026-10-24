@@ -1,5 +1,9 @@
 test/**
 previa/**
 scripts/**
+docs/**
 *.vsix
 .gitignore
+.gitattributes
+CONTRIBUTING.md
+README.pt-BR.md
